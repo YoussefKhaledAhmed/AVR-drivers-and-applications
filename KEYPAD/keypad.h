@@ -41,6 +41,7 @@ typedef enum{
 #error("the states of the button are the same")
 #endif
 
+void KEYPAD_init();
 STATUS KEYPAD_getPressedKey(keypad_button_read_buffer_type *);
 STATUS KEYPAD_4x4_adjustKeyNumber(uint8 * , uint8 *);
 

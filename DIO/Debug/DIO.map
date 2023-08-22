@@ -141,7 +141,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1528
+.text           0x00000000     0x159a
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -246,37 +246,40 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000a84                __fpcmp_parts_f
                 0x00000b36                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x00000b36      0x20c ./DIO_Exercise.o
+ .text.main     0x00000b36      0x15c ./DIO_Exercise.o
                 0x00000b36                main
  .text.DIO_setupPinDirection
-                0x00000d42      0x208 ./dio.o
-                0x00000d42                DIO_setupPinDirection
+                0x00000c92      0x208 ./dio.o
+                0x00000c92                DIO_setupPinDirection
  .text.DIO_writePin
-                0x00000f4a      0x210 ./dio.o
-                0x00000f4a                DIO_writePin
+                0x00000e9a      0x210 ./dio.o
+                0x00000e9a                DIO_writePin
+ .text.DIO_togglePin
+                0x000010aa      0x122 ./dio.o
+                0x000010aa                DIO_togglePin
  .text.DIO_readPin
-                0x0000115a      0x12a ./dio.o
-                0x0000115a                DIO_readPin
+                0x000011cc      0x12a ./dio.o
+                0x000011cc                DIO_readPin
  .text.DIO_setupPortDirection
-                0x00001284       0xfa ./dio.o
-                0x00001284                DIO_setupPortDirection
+                0x000012f6       0xfa ./dio.o
+                0x000012f6                DIO_setupPortDirection
  .text.DIO_writePort
-                0x0000137e       0x92 ./dio.o
-                0x0000137e                DIO_writePort
+                0x000013f0       0x92 ./dio.o
+                0x000013f0                DIO_writePort
  .text.DIO_readPort
-                0x00001410       0xa6 ./dio.o
-                0x00001410                DIO_readPort
- .text.libgcc   0x000014b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000014b6       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x000014b6                __prologue_saves__
- .text.libgcc   0x000014ee       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x000014ee                __epilogue_restores__
- .text.libgcc   0x00001524        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x00001524                . = ALIGN (0x2)
+                0x00001482       0xa6 ./dio.o
+                0x00001482                DIO_readPort
+ .text.libgcc   0x00001528        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001528       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00001528                __prologue_saves__
+ .text.libgcc   0x00001560       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00001560                __epilogue_restores__
+ .text.libgcc   0x00001596        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00001596                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001524        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00001524                exit
-                0x00001524                _exit
+ .fini9         0x00001596        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00001596                exit
+                0x00001596                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -295,11 +298,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001524        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00001596        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001528                _etext = .
+                0x0000159a                _etext = .
 
-.data           0x00800060        0x8 load address 0x00001528
+.data           0x00800060        0x8 load address 0x0000159a
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -353,8 +356,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.bss*)
  *(COMMON)
                 0x00800068                PROVIDE (__bss_end, .)
-                0x00001528                __data_load_start = LOADADDR (.data)
-                0x00001530                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000159a                __data_load_start = LOADADDR (.data)
+                0x000015a2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800068        0x0
                 0x00800068                PROVIDE (__noinit_start, .)
@@ -379,15 +382,15 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000      0xd14
+.stab           0x00000000      0xd80
  *(.stab)
- .stab          0x00000000      0x510 ./DIO_Exercise.o
- .stab          0x00000510      0x804 ./dio.o
-                                0x9b4 (size before relaxing)
+ .stab          0x00000000      0x4b0 ./DIO_Exercise.o
+ .stab          0x000004b0      0x8d0 ./dio.o
+                                0xa80 (size before relaxing)
 
-.stabstr        0x00000000      0xc5c
+.stabstr        0x00000000      0xc95
  *(.stabstr)
- .stabstr       0x00000000      0xc5c ./DIO_Exercise.o
+ .stabstr       0x00000000      0xc95 ./DIO_Exercise.o
 
 .stab.excl
  *(.stab.excl)

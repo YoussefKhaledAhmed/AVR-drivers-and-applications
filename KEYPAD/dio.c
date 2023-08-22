@@ -109,6 +109,31 @@ STATUS DIO_readPin(DIO_PinConfiguration * configurations, uint8 * read_buffer){
 }
 
 
+STATUS DIO_togglePin(DIO_PinConfiguration * configurations){
+	uint8 PORT = configurations->port_num;
+	uint8 PIN = configurations->pin_num;
+	switch(PORT){
+	case PORTA_ID:
+		TOGGLE_BIT(PORT , PIN);
+		break;
+	case PORTB_ID:
+		TOGGLE_BIT(PORT , PIN);
+		break;
+	case PORTC_ID:
+		TOGGLE_BIT(PORT , PIN);
+		break;
+	case PORTD_ID:
+		TOGGLE_BIT(PORT , PIN);
+		break;
+	default:
+		return E_NOK;
+		break;
+	}
+	return E_OK;
+}
+
+
+
 STATUS DIO_setupPortDirection(DIO_PortDirectionConfigurations * configurations){
 	uint8 PORT = configurations->port_num;
 	uint8 direction = configurations->direction;
